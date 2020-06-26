@@ -1,0 +1,39 @@
+/****** Object:  Table [dbo].[student]    Script Date: 05/04/20 1:10:07 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[student](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[first_name] [varchar](30) NOT NULL,
+	[last_name] [varchar](30) NOT NULL,
+	[email] [varchar](50) NULL,
+	[pocket_money] [int] NULL,
+	[password] [varchar](50) NULL,
+	[is_deleted] [tinyint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[student] ADD  DEFAULT ('0') FOR [is_deleted]
+GO
+
+
+
+Create Procedure usp_Insert_Student
+@FirstName nvarchar(50),
+@LastName  nvarchar(50),
+@EmailAddress nvarchar(50),
+@PocketMoney int,
+@password nvarchar(150)
+as begin
+ INSERT INTO student (first_name, last_name, email,pocket_money,[password],is_deleted) 
+ Values
+ (@FirstName, @LastName, @EmailAddress, @PocketMoney, @password,0) -- 0 indicates the record is not deleted
+ select SCOPE_IDENTITY()  
+end

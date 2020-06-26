@@ -1,0 +1,136 @@
+﻿@model TestApp_MVC.Models.StudentData
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<div class="col-md-4">
+   
+        <table style="border: 0px solid black ;background-color: WhiteSmoke;width:800px" class="table-bordered">
+            <tr id="TaxReturn">
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("First Name*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.FirstName,   new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName )
+                </td>
+            </tr>
+
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Last Name*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName )
+                </td>
+            </tr>
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Email*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email )
+
+                </td>
+            </tr>
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Pocket Money*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.PckMoney, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PckMoney )
+
+                </td>
+            </tr>
+
+            <tr id="TaxReturn">
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Password*")
+                </td>
+                <td class="editor-field">
+                     
+
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password )
+
+                </td>
+            </tr>
+
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Age*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Age )
+
+
+                </td>
+            </tr>
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("City*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.City )
+
+
+                </td>
+            </tr>
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("State*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.State )
+
+
+                </td>
+            </tr>
+
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Zip*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.Zip, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Zip )
+
+
+                </td>
+            </tr>
+            <tr>
+                <td class="editor-label" style="padding-left:20px">
+                    @Html.Label("Country*")
+                </td>
+                <td class="editor-field">
+                    @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Country )
+
+
+                </td>
+            </tr>
+            @*<tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>*@
+            <tr  style="height:100px" >
+                <td colspan="2" style="text-align:center">
+                    <input type="submit" id="submit" name="submit" value="Save"  class=" btn btn-primary button"/>
+                </td>
+            </tr>
+            @*<tr id="ValidationSummary"  class="alert alert-danger text-uppercase"     role="alert">
+                <td colspan="2">
+                    @Html.ValidationSummary(false, "Please fix the following errors and then submit the form")
+
+                </td>
+            </tr>*@
+        </table>
+    
+</div>

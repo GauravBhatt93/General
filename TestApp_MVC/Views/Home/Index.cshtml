@@ -1,0 +1,70 @@
+﻿
+@model  TestApp_MVC.Models.StudentData
+
+
+@{
+    /**/
+
+    ViewBag.Title = "Students Module";
+}
+<style>
+    .field-validation-error {
+        color: red
+    }
+
+    .input-validation-error {
+        color: red;
+        border-color: red
+    }
+
+    .button {
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+</style>
+<div class="jumbotron">
+    <h1>Add Student </h1>
+</div>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    string message = ViewBag.Message;
+    <span>@message</span>
+    <br />
+    <br />
+
+    @Html.Partial("_AddStudent", Model)
+  
+}
+<br />
+<br />
+
+<div class="row"> 
+    <div>
+
+
+        @if (Model.students.Count > 0)
+        {
+            @Html.Partial("_StudentList", Model.students)
+
+        }
+    </div>
+</div>
+@section scripts
+{
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    @*<script type="text/javascript">
+            $(document).ready(function () {
+                $('#ValidationSummary').hide();
+                $('#submit').click(function () {
+                    $('#ValidationSummary').show();
+                });
+
+            });
+        </script>*@
+}
